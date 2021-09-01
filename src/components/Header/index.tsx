@@ -1,5 +1,7 @@
 import Image from 'next/image'
+import React from 'react'
 import Logo from '../../../public/images/logo.svg'
+import SignInButton from '../SignInButton'
 import styles from './styles.module.scss'
 
 export default function Header() {
@@ -10,10 +12,13 @@ export default function Header() {
           src={Logo}
           alt="ig.news"
         />
+        
         <nav>
           <a className={styles.active} href="">Home</a>
           <a href="">Posts</a>
         </nav>
+
+        <SignInButton />
       </div>
     </header>
   )
