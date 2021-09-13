@@ -18,7 +18,6 @@ interface PostsProps {
 }
 
 export default function Posts({ posts }: PostsProps) {
-  console.log("🚀 ~ file: index.tsx ~ line 20 ~ Posts ~ posts", posts)
   return (
     <>
       <Head>

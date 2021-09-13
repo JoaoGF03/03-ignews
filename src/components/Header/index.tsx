@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import React from 'react'
 import Logo from '../../../public/images/logo.svg'
+import ActiveLink from '../ActiveLink'
 import SignInButton from '../SignInButton'
 import styles from './styles.module.scss'
-import Link from 'next/link'
 
 export default function Header() {
   return (
@@ -15,12 +15,12 @@ export default function Header() {
         />
 
         <nav>
-          <Link href="/">
-            <a className={styles.active} >Home</a>
-          </Link>
-          <Link href="/posts" prefetch>
-            <a >Posts</a>
-          </Link>
+          <ActiveLink activeClassName={styles.active} href="/">
+            <a>Home</a>
+          </ActiveLink>
+          <ActiveLink activeClassName={styles.active} href="/posts" prefetch>
+            <a>Posts</a>
+          </ActiveLink>
         </nav>
 
         <SignInButton />
