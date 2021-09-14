@@ -18,6 +18,19 @@
   --yellow-500: #eba417;
 }
 
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #121214;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #323238;
+  border-radius: 1rem;
+}
+
 html {
   @media (max-width: 1080px) {
     font-size: 93.75%;
