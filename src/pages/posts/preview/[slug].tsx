@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import { useSession } from 'next-auth/client';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -53,8 +53,15 @@ export default function PostPreview({ post }: PostPreviewProps) {
     </>
   )
 }
-
-export const getStaticPaths = () => {
+/**
+* * If array is empty, next will generate the static page for all posts
+* ? paths: [{
+* ?   params: { slug: 'usecolorscheme' }
+* ? }
+* * Passing the slug on params, that would be the only static route
+* @param fallback blocking => only show content when is fully loaded in next SSR (ServerSideRendering)
+*/
+export const getStaticPaths: GetStaticPaths = () => {
   return {
     paths: [],
     fallback: 'blocking'
@@ -80,6 +87,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 
   return {
-    props: { post }
+    props: { post },
+    redirect: 60 * 30, // 30 min
   }
 }
+
