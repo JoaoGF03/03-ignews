@@ -10,6 +10,11 @@ export default NextAuth({
       clientSecret: process.env.GITHUB_SECRET,
       scope: 'read:user',
     }),
+    Providers.Google({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      accessTokenUrl: "https://accounts.google.com/o/oauth2/token",
+    })
   ],
   callbacks: {
     async session(session) {

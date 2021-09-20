@@ -23,7 +23,8 @@ export default function Header() {
           </ActiveLink>
         </nav>
 
-        <SignInButton />
+        <SignInButton option='GitHub'/>
+        <SignInButton option='Google'/>
       </div>
     </header>
   )
